@@ -1,0 +1,43 @@
+<section>
+<div class="col-lg-12">
+    <h2 class="font-weight-light margin-bottom-40 margin-top-40">Customer Reviews</h2>
+</div>
+
+{{#reviews}}
+    $review_card_right(name="{{name}}",
+      img="{{img}}",
+      comment="“{{comment}}”",
+      resource="{{resource}}",
+      rating="{{stars}}",
+      starValue="{{star-value}}"
+      )$
+{{/reviews}}</div><!--SHOW MORE SECTION--><div aria-multiselectable="true" class="panel-group" id="accordion" role="tablist" style="margin-bottom:0px!important;">
+<div class="panel panel-primary" style="border:none; background:none!important; box-shadow:none;">
+    <div class="panel-heading collapsed show-more-heading" id="heading1" data-toggle="collapse" href="#collapse1" role="button" data-parent="#accordion" aria-expanded="false" style="border: none!important;background: none !important;box-shadow: none!important;transition: 2s;">
+        <h4 class="panel-title text-center" style="" onclick="expandFunction()" id="show-more">
+            <a class="collapsed" data-parent="#accordion" data-toggle="collapse" href="#collapse1" role="button" aria-expanded="false" id="show-more-text">
+                Show More</br><img src="~/content/studyprn/images/svg/down-arrow.svg" style="height:20px;" id="show-more-arrow">
+        </a>
+    </h4>
+</div>
+<div aria-expanded="false" aria-labelledby="heading1" class="panel-collapse collapse" id="collapse1" role="tabpanel" style="height: 0px;">
+    <div class="panel-body no-padding" style="border-top:none!important;">
+        {{#reviews}}
+            $review_card_right(name="{{name}}",
+                    img="{{img}}",
+                    comment="“{{comment}}”",
+                    resource="{{resource}}",
+                    rating="{{stars}}",
+                    starValue="{{star-value}}"
+                    )$
+        {{/reviews}}
+
+        <div class="margin-bottom-30">
+            <h4 class="panel-title text-center show-less-heading">
+                <a class="collapsed" data-parent="#accordion" data-toggle="collapse" href="#collapse1" role="button" aria-expanded="false" onclick="lessFunction()" id="show-less">
+                    <img src="~/content/studyprn/images/svg/down-arrow.svg" style="height:20px;transform: rotate(180deg);" id="show-less-arrow"></br>Show Less
+            </a>
+        </h4>
+    </div>
+</div></div></div><br></div><!--Buttons--><div class="row"><div class="col-lg-6  margin-bottom-30 margin-top-30"><button class="btn btn-success btn-lg w-100 font-20" onclick="window.location.href='{{trial}}'">Free Trial Available</button></div><div class="col-lg-6  margin-bottom-30 margin-top-30"><button class="btn btn-warning btn-lg w-100 font-20" onclick="javascript:$('.add-to-cart')[0].click();">12 Month Subscription</button></div></div>
+</section>
